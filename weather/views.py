@@ -6,7 +6,7 @@ def WeatherApp(request):
     if request.method == 'POST':
         city = request.POST.get("city")
         API_KEY = "974317af03374186e5b8f2c1660e606e"
-        #take your own API_KEY from : https://openweathermap.org/appid
+        # take your own API_KEY from : https://openweathermap.org/appid
         source = urllib.request.urlopen('https://api.openweathermap.org/data/2.5/weather?q=' + city + '&units=metric&appid=' + API_KEY).read()
         ListData = json.loads(source)
         data = {
