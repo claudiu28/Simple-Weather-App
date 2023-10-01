@@ -2,11 +2,11 @@ from django.shortcuts import render
 import json
 import urllib.request
 
-
 def WeatherApp(request):
     if request.method == 'POST':
         city = request.POST.get("city")
-        source = urllib.request.urlopen('https://api.openweathermap.org/data/2.5/weather?q=' + city + '&units=metric&appid=974317af03374186e5b8f2c1660e606e').read()
+        API_KEY = "974317af03374186e5b8f2c1660e606e"
+        source = urllib.request.urlopen('https://api.openweathermap.org/data/2.5/weather?q=' + city + '&units=metric&appid=' + API_KEY).read()
         ListData = json.loads(source)
         data = {
             'country_code': str(ListData['sys']['country']),
