@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    {% load static %}
+
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Weather</title>
+    <link rel = "icon" type="image/png" href="{% static 'cloudy.png' %}">
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+</head>
+<body>
+    <div class = "container mt-5">
+       <div class="card border-danger mb-3 w-100" >
+        <div class="card-header fw-bold">Error detected!!!</div>
+        <div class="card-body text-danger">
+            <h5 class="card-title">Your city was not found!!!</h5>
+            <p class="card-text">{{ error_context }}</p>
+        </div>
+           <div class="card-footer bg-transparent border-success"><a href = "{% url 'WeatherApp' %}"><button type="button" class="btn btn-outline-danger w-100">Home</button></a></div>
+       </div>
+    </div>
+</body>
+</html>
